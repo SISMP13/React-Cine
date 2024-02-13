@@ -38,14 +38,16 @@ export const HomePage = () => {
 
   return (
     <>
-      <Slider />
-      <h2 className="text-4xl font-bold capitalize mb-10">
-        Nuestras <span className="text-[#eb6d6d]">películas</span>
-      </h2>
-      <div className="w-[100%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mx-auto gap-5">
-        {data?.results?.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
+      <div className="flex flex-col items-center justify-center">
+        <Slider />
+        <h2 className="text-4xl font-bold capitalize mb-10">
+          Nuestras <span className="text-[#eb6d6d]">películas</span>
+        </h2>
+        <div className="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mx-auto">
+          {data?.results?.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </div>
       </div>
     </>
   );
