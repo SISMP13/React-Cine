@@ -1,12 +1,8 @@
-import { Link } from "react-router-dom";
-
-const Footer = () => {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="footer">
-        <Link to='/' className="navbar-link">
-              <span className="title">MiCineTMDB</span>
-        </Link>
+    <>
+      <footer className="lg:pl-[340px] bg-[#005eff37] text-white flex flex-col xl:flex-row justify-center items-center gap-4 xl:gap-0 xl:justify-evenly w-full p-4">
       <span className="attribution"></span> licensed under
       <p className="license">
         <a
@@ -29,8 +25,7 @@ const Footer = () => {
         </a>
       </p>
       <p className="copyright">Copyright &copy; {currentYear} INMEDEV</p>
-    </footer>
+      </footer>
+    </>
   );
 };
-
-export default Footer;
