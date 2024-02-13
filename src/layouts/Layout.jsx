@@ -5,7 +5,7 @@ export const Layout = () => {
   return (
     <>
       <Header />
-      <main className="lg:pl-[340px] text-white p-8 pt-36">
+      <main className="lg:pl-[100px] text-white p-8 pt-36">
         <Outlet />
       </main>
       <Footer />
