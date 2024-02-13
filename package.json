@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fullcalendar/react": "^6.1.10",
     "@heroicons/react": "^2.1.1",
     "autoprefixer": "^10.4.16",
     "axios": "^1.6.5",
