@@ -1,5 +1,3 @@
-
-
 export const CompraEntradas = ({ handleTicketChange, entradas, totalPrice, handleReservation }) => {
     return (
         <div className="reservation-section">
