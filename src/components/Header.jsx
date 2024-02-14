@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { RiSearchLine, RiHome3Line, RiMore2Fill } from 'react-icons/ri';
+import { RiSearchLine, RiHome3Line, RiMore2Fill, RiHomeSmile2Fill } from 'react-icons/ri';
 import { BsStars } from 'react-icons/bs';
 
 export const Header = () => {
@@ -34,8 +34,11 @@ export const Header = () => {
         <Link to="/" className="text-2xl">
           <RiHome3Line />
         </Link>
-        <Link to="/top-rated" className="text-2xl">
+        <Link to="/favorites" className="text-2xl">
           <BsStars />
+        </Link>
+        <Link to="/more" className="text-2xl">
+          <RiHomeSmile2Fill />
         </Link>
       </div>
       <form
