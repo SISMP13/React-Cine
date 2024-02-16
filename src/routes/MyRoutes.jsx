@@ -6,7 +6,9 @@ import {
   DetailMoviePage,
   MoreMoviePage,
   SearchPage,
+  MisCompras
 } from "../pages";
+
 
 const MyRoutes = () => {
   return (
@@ -18,6 +20,7 @@ const MyRoutes = () => {
           <Route path="/more" element={<MoreMoviePage />} />
           <Route path="/detail/:id" element={<DetailMoviePage />} />
           <Route path="/search/:query" element={<SearchPage />} />
+          <Route path="/miscompras" element={<MisCompras />} />
         </Route>
       </Routes>
     </BrowserRouter>

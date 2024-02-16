@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetails, getImageUrl } from "../api/api";
 import { AiFillStar } from "react-icons/ai";
 import { CompraEntradas } from "../components";
 
-
-export const DetailMoviePage = ({setResults}) => {
+export const DetailMoviePage = ({ setResults }) => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [entradas, setEntradas] = useState(0); // Estado para la cantidad de entradas reservadas
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
 
   useEffect(() => {
     const fetchMovieDetailsById = async () => {
@@ -29,7 +26,6 @@ export const DetailMoviePage = ({setResults}) => {
     return <div>Cargando...</div>;
   }
 
-
   // Función para manejar el cambio en la cantidad de entradas
   const handleTicketChange = (event) => {
     const newEntradas = parseInt(event.target.value);
@@ -41,9 +37,20 @@ export const DetailMoviePage = ({setResults}) => {
 
   // Función para manejar la reserva de entradas
   const handleReservation = () => {
-    // Aquí podemos agregar la lógica para enviar la reserva a un backend, por ejemplo
-    alert(`Reservaste ${entradas} entradas para ${movieDetails.original_title}. Total: ${precioTotal}€`);
-  }
+    // Guardar la compra en localStorage
+    const compra = {
+      movieTitle: movieDetails.title,
+      entradas: entradas,
+      totalPrice: precioTotal
+    };
+
+    const comprasAnteriores = JSON.parse(localStorage.getItem("compras")) || [];
+    const nuevasCompras = [...comprasAnteriores, compra];
+    localStorage.setItem("compras", JSON.stringify(nuevasCompras));
+
+    // Mensaje de confirmación
+    alert(`Reservaste ${entradas} entradas para ${movieDetails.title}. Total: ${precioTotal}€`);
+  };
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
