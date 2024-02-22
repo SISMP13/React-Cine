@@ -33,7 +33,7 @@ export const DetailMoviePage = ({ setResults }) => {
   };
 
   // Calcula el precio total de las entradas
-  const precioTotal = entradas * 10; // Precio fijo por boleto
+  const precioTotal = entradas * 10; // Precio fijo por ticket
 
   // Función para manejar la reserva de entradas
   const handleReservation = () => {
